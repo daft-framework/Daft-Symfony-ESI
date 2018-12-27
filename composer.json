@@ -1,0 +1,54 @@
+{
+    "name": "signpostmarv/daft-symfony-esi",
+    "description": "Tweaks to Symfony's ESI Cache Implementation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SignpostMarv",
+            "email": "me@signpostmarv.name"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SignpostMarv\\Symfony\\HttpCache\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SignpostMarv\\Symfony\\HttpCache\\Tests\\": "./Tests/"
+        }
+    },
+    "config": {
+        "classmap-authoritative": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "tests": [
+            "phpunit -vvvv --coverage-clover=phpunit.clover",
+            "phpstan analyse -c ./phpstan.neon .php_cs.dist src Tests",
+            "psalm",
+            "phpcpd src Tests",
+            "phpmnd src",
+            "phpmnd Tests",
+            "composer-require-checker check ./composer.json",
+            "php-cs-fixer fix --verbose --allow-risky=yes --dry-run"
+        ]
+    },
+    "require": {
+        "php": "^7.1",
+        "symfony/http-foundation": "^4.2",
+        "symfony/http-kernel": "^4.2"
+    },
+    "require-dev": {
+        "maglnet/composer-require-checker": "^1.1",
+        "phpstan/phpstan": "^0.10.6",
+        "phpstan/phpstan-phpunit": "^0.10.0",
+        "phpstan/phpstan-strict-rules": "^0.10.1",
+        "phpunit/phpunit": "^7.5",
+        "povils/phpmnd": "^2.0",
+        "roave/security-advisories": "dev-master",
+        "sebastian/phpcpd": "^4.1",
+        "signpostmarv/php-cs-fixer-config": "^0.6.0",
+        "vimeo/psalm": "^3.0"
+    }
+}

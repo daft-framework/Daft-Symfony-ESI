@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<psalm
+    totallyTyped="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config"
+>
+    <projectFiles>
+        <file name=".php_cs.dist" />
+        <directory name="src" />
+        <directory name="Tests" />
+    </projectFiles>
+
+    <issueHandlers>
+    </issueHandlers>
+</psalm>

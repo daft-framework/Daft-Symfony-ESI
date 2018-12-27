@@ -1,0 +1,5 @@
+/vendor/
+/symfony-http-cache/
+/phpunit/
+/.php_cs.cache
+/phpunit.clover
