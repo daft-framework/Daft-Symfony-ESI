@@ -21,6 +21,7 @@ use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 use Symfony\Component\HttpKernel\HttpKernel;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 class EsiTest extends TestCase
@@ -135,7 +136,7 @@ class EsiTest extends TestCase
         $cache = static::ObtainHttpCache($dispatcher);
 
         $request = Request::create($uri);
-        $response = $cache->handle($request, $cache::MASTER_REQUEST, true);
+        $response = $cache->handle($request, HttpKernelInterface::MASTER_REQUEST, true);
         $cache->terminate($request, $response);
 
         static::assertSame($expectedContent, $response->getContent());
@@ -163,7 +164,7 @@ class EsiTest extends TestCase
             ob_end_clean();
         }
 
-        $response = $cache->handle($request, $cache::MASTER_REQUEST, false);
+        $response = $cache->handle($request, HttpKernelInterface::MASTER_REQUEST, false);
     }
 
     public function testEsiNoResponse() : void

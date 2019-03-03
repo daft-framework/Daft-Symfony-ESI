@@ -25,6 +25,7 @@ class Esi extends Base
     *
     * @param string $uri
     * @param string $alt
+    * @param bool $ignoreErrors
     */
     public function handle(HttpCache $cache, $uri, $alt, $ignoreErrors)
     {
