@@ -6,11 +6,11 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config"
 >
     <projectFiles>
-        <file name=".php_cs.dist" />
-        <directory name="src" />
-        <directory name="Tests" />
+        <file name=".php_cs.dist"/>
+        <directory name="src"/>
+        <directory name="Tests"/>
     </projectFiles>
 
     <issueHandlers>
     </issueHandlers>
-</psalm>
+<plugins><pluginClass class="Psalm\PhpUnitPlugin\Plugin"/></plugins></psalm>

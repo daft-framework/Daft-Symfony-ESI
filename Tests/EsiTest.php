@@ -26,6 +26,9 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class EsiTest extends TestCase
 {
+    /**
+    * @psalm-return array<int, array{0:string, 1:Closure(GetResponseEvent):void, 2:string}>
+    */
     public function DataProviderTestEsi() : array
     {
         return [
@@ -64,7 +67,6 @@ class EsiTest extends TestCase
                                 break;
                             case 'http://localhost/foo':
                                 throw new RuntimeException('thrown on purpose');
-                                break;
                             case 'http://localhost/bar':
                                 $e->setResponse(new Response('bat', Response::HTTP_OK));
                                 break;
@@ -76,6 +78,9 @@ class EsiTest extends TestCase
         ];
     }
 
+    /**
+    * @psalm-return array<int, array{0:string, 1:Closure(GetResponseEvent):void, 2:class-string<\Throwable>, 3:string}>
+    */
     public function DataProviderTestEsiBad() : array
     {
         return [
@@ -94,7 +99,6 @@ class EsiTest extends TestCase
                                 break;
                             case 'http://localhost/foo':
                                 throw new RuntimeException('thrown on purpose');
-                                break;
                         }
                     }
                 },
@@ -144,6 +148,8 @@ class EsiTest extends TestCase
 
     /**
     * @dataProvider DataProviderTestEsiBad
+    *
+    * @psalm-param class-string<\Throwable> $expectedException
     */
     public function testEsiBad(
         string $uri,
@@ -164,7 +170,7 @@ class EsiTest extends TestCase
             ob_end_clean();
         }
 
-        $response = $cache->handle($request, HttpKernelInterface::MASTER_REQUEST, false);
+        $cache->handle($request, HttpKernelInterface::MASTER_REQUEST, false);
     }
 
     public function testEsiNoResponse() : void
