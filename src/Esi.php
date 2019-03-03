@@ -45,9 +45,6 @@ class Esi extends Base
         $response = null;
 
         try {
-            /**
-            * @var Response
-            */
             $response = $cache->handle($request, HttpKernelInterface::SUB_REQUEST, $ignoreErrors);
         } catch (Throwable $e) {
             if ((bool) $alt) {
