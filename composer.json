@@ -26,7 +26,7 @@
         "tests": [
             "phpunit -vvvv --coverage-clover=phpunit.clover",
             "phpstan analyse -c ./phpstan.neon .php_cs.dist src Tests",
-            "psalm --find-dead-code",
+            "psalm --find-dead-code --shepherd",
             "phpcpd src Tests",
             "phpmnd ./ --exclude=./symfony-http-cache/ --exclude=./phpunit/ --exclude=./vendor/ --non-zero-exit-on-violation --hint",
             "composer-require-checker check ./composer.json",
