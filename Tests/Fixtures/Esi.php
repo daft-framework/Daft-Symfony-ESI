@@ -11,13 +11,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 class Esi extends Base
 {
-    public static function FlagRequestAsEsiPublic(Request $request) : void
-    {
-        parent::FlagRequestAsEsi($request);
-    }
+	public static function FlagRequestAsEsiPublic(Request $request) : void
+	{
+		parent::FlagRequestAsEsi($request);
+	}
 
-    public static function UnflagRequestAsEsiPublic(Request $request) : void
-    {
-        parent::UnflagRequestAsEsi($request);
-    }
+	public static function UnflagRequestAsEsiPublic(Request $request) : void
+	{
+		parent::UnflagRequestAsEsi($request);
+	}
 }

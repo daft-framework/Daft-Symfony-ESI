@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace SignpostMarv\CS;
 
 return ConfigUsedWithStaticAnalysis::createWithPaths(...[
-    __FILE__,
-    __DIR__ . '/src/',
-    __DIR__ . '/Tests/',
+	__FILE__,
+	__DIR__ . '/src/',
+	__DIR__ . '/Tests/',
 ]);

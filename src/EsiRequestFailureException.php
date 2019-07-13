@@ -10,12 +10,12 @@ use Throwable;
 
 class EsiRequestFailureException extends EsiFailureException
 {
-    public function __construct(string $uri, int $status, Throwable $previous = null)
-    {
-        parent::__construct(
-            sprintf('Error when rendering request for %s', $uri),
-            $status,
-            $previous
-        );
-    }
+	public function __construct(string $uri, int $status, Throwable $previous = null)
+	{
+		parent::__construct(
+			sprintf('Error when rendering request for %s', $uri),
+			$status,
+			$previous
+		);
+	}
 }

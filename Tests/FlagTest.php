@@ -10,19 +10,19 @@ use Symfony\Component\HttpFoundation\Request;
 
 class FlagTest extends TestCase
 {
-    public function testFlagUnflag() : void
-    {
-        $request = new Request();
+	public function testFlagUnflag() : void
+	{
+		$request = new Request();
 
-        static::assertFalse(Fixtures\Esi::IsRequestEsi($request));
+		static::assertFalse(Fixtures\Esi::IsRequestEsi($request));
 
-        Fixtures\Esi::FlagRequestAsEsiPublic($request);
+		Fixtures\Esi::FlagRequestAsEsiPublic($request);
 
-        static::assertTrue(Fixtures\Esi::IsRequestEsi($request));
-        static::assertFalse(Fixtures\Esi::IsRequestEsi(clone $request));
+		static::assertTrue(Fixtures\Esi::IsRequestEsi($request));
+		static::assertFalse(Fixtures\Esi::IsRequestEsi(clone $request));
 
-        Fixtures\Esi::UnflagRequestAsEsiPublic($request);
+		Fixtures\Esi::UnflagRequestAsEsiPublic($request);
 
-        static::assertFalse(Fixtures\Esi::IsRequestEsi($request));
-    }
+		static::assertFalse(Fixtures\Esi::IsRequestEsi($request));
+	}
 }
