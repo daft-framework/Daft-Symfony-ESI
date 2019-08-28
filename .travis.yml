@@ -8,7 +8,8 @@ cache:
 install:
   - travis_retry composer install --no-interaction --no-suggest --prefer-source
 script:
-  - composer run tests
-  - ./vendor/bin/php-coveralls -vvv
+  - composer run static-analysis
+  - ./vendor/bin/phpunit --coverage-clover=./phpunit.clover
+  - ./vendor/bin/php-coveralls
 matrix:
   fast_finish: true

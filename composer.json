@@ -22,9 +22,18 @@
         "classmap-authoritative": true,
         "sort-packages": true
     },
+	"conflict": {
+		"vimeo/psalm": "<3.4"
+	},
+	"suggest": {
+		"vimeo/psalm": "for static analysis & templated typehinting"
+	},
     "scripts": {
-        "tests": [
-            "phpunit -vvvv --coverage-clover=phpunit.clover",
+		"tests": [
+			"phpunit -vvvv",
+			"@static-analysis"
+		],
+        "static-analysis": [
             "phpstan analyse -c ./phpstan.neon .php_cs.dist src Tests",
             "psalm --find-dead-code --shepherd",
             "phpcpd src Tests",
@@ -50,6 +59,6 @@
         "roave/security-advisories": "dev-master",
         "sebastian/phpcpd": "^4.1",
         "signpostmarv/php-cs-fixer-config": "^0.11.0",
-        "vimeo/psalm": "dev-master"
+        "vimeo/psalm": "^3.4"
     }
 }

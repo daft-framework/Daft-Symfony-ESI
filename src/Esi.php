@@ -65,7 +65,7 @@ class Esi extends Base
 			throw new EsiResponseFailureException($uri, $response->getStatusCode());
 		}
 
-		return $response->getContent();
+		return (string) $response->getContent();
 	}
 
 	public static function IsRequestEsi(Request $request) : bool
