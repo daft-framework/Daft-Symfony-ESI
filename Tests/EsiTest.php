@@ -7,6 +7,7 @@ declare(strict_types=1);
 namespace SignpostMarv\Symfony\HttpCache\Tests;
 
 use Closure;
+use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use SignpostMarv\Symfony\HttpCache\Esi;
 use SignpostMarv\Symfony\HttpCache\EsiFailureException;

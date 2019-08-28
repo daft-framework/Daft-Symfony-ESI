@@ -3,3 +3,4 @@
 /phpunit/
 /.php_cs.cache
 /phpunit.clover
+/.phpunit.result.cache

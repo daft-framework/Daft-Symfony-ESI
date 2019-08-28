@@ -6,6 +6,7 @@ declare(strict_types=1);
 
 namespace SignpostMarv\Symfony\HttpCache\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 class FlagTest extends TestCase

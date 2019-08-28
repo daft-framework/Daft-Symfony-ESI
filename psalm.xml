@@ -12,6 +12,9 @@
 		<file name=".php_cs.dist"/>
 		<directory name="src"/>
 		<directory name="Tests"/>
+		<ignoreFiles>
+			<directory name="vendor"/>
+		</ignoreFiles>
 	</projectFiles>
 
 	<issueHandlers>
