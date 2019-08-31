@@ -23,14 +23,7 @@ class Esi extends Base
 	*/
 	public function handle(HttpCache $cache, $uri, $alt, $ignoreErrors)
 	{
-		$request = Request::create(
-			$uri,
-			Request::METHOD_GET,
-			[],
-			$cache->getRequest()->cookies->all(),
-			[],
-			$cache->getRequest()->server->all()
-		);
+		$request = $this->handleRequestGeneration($cache, $uri);
 
 		/**
 		* @var Response|null
@@ -56,5 +49,21 @@ class Esi extends Base
 		}
 
 		return (string) $response->getContent();
+	}
+
+	protected function handleRequestGeneration(
+		HttpCache $cache,
+		string $uri
+	) : Request {
+		$request = Request::create(
+			$uri,
+			Request::METHOD_GET,
+			[],
+			$cache->getRequest()->cookies->all(),
+			[],
+			$cache->getRequest()->server->all()
+		);
+
+		return $request;
 	}
 }
