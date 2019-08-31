@@ -14,6 +14,8 @@ use Throwable;
 
 class Esi extends Base
 {
+	const DEFAULT_EXCEPTION_CODE = 0;
+
 	/**
 	* {@inheritdoc}
 	*
@@ -33,12 +35,16 @@ class Esi extends Base
 		try {
 			$response = $cache->handle($request, HttpKernelInterface::SUB_REQUEST, $ignoreErrors);
 		} catch (Throwable $e) {
-			if ((bool) $alt) {
+			if ('' !== $alt) {
 				return $this->handle($cache, $alt, '', $ignoreErrors);
 			}
 
 			if ( ! $ignoreErrors) {
-				throw new EsiRequestFailureException($uri, 0, $e);
+				throw new EsiRequestFailureException(
+					$uri,
+					self::DEFAULT_EXCEPTION_CODE,
+					$e
+				);
 			}
 		}
 
@@ -48,7 +54,10 @@ class Esi extends Base
 			throw new EsiResponseFailureException($uri, $response->getStatusCode());
 		}
 
-		return (string) $response->getContent();
+		/**
+		* @var string
+		*/
+		return $response->getContent();
 	}
 
 	protected function handleRequestGeneration(

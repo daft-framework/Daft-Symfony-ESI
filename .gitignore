@@ -4,3 +4,4 @@
 /.php_cs.cache
 /phpunit.clover
 /.phpunit.result.cache
+/infection.log
