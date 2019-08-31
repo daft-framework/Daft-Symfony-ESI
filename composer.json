@@ -25,6 +25,11 @@
 	"conflict": {
 		"vimeo/psalm": "<3.4"
 	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.4.x-dev"
+		}
+	},
 	"suggest": {
 		"vimeo/psalm": "for static analysis & templated typehinting"
 	},
@@ -43,7 +48,7 @@
         ]
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "symfony/http-foundation": "^4.3",
         "symfony/http-kernel": "^4.3"
     },
