@@ -11,10 +11,7 @@ use Symfony\Component\HttpKernel\HttpCache\HttpCache as Base;
 
 class HttpCache extends Base
 {
-	/**
-	* @var Request|null
-	*/
-	private $request;
+	private ? Request $request = null;
 
 	public function getRequest() : Request
 	{

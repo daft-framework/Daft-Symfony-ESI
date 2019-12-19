@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -28,14 +29,17 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class EsiTest extends TestCase
 {
 	/**
-	* @psalm-return array<int, array{0:string, 1:Closure(GetResponseEvent):void, 2:string}>
+	* @psalm-return array<int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:string}>
 	*/
 	public function DataProviderTestEsi() : array
 	{
 		return [
 			[
 				'/test',
-				function (GetResponseEvent $e) : void {
+				/**
+				* @param RequestEvent|GetResponseEvent $e
+				*/
+				function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -55,7 +59,10 @@ class EsiTest extends TestCase
 			],
 			[
 				'/test',
-				function (GetResponseEvent $e) : void {
+				/**
+				* @param RequestEvent|GetResponseEvent $e
+				*/
+				function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -80,14 +87,17 @@ class EsiTest extends TestCase
 	}
 
 	/**
-	* @psalm-return array<int, array{0:string, 1:Closure(GetResponseEvent):void, 2:class-string<\Throwable>, 3:string}>
+	* @psalm-return array<int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:class-string<\Throwable>, 3:string}>
 	*/
 	public function DataProviderTestEsiBad() : array
 	{
 		return [
 			[
 				'/test',
-				function (GetResponseEvent $e) : void {
+				/**
+				* @param RequestEvent|GetResponseEvent $e
+				*/
+				function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -108,7 +118,10 @@ class EsiTest extends TestCase
 			],
 			[
 				'/test',
-				function (GetResponseEvent $e) : void {
+				/**
+				* @param RequestEvent|GetResponseEvent $e
+				*/
+				function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
