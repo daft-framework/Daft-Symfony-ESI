@@ -1,55 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files
-  psalm-version="3.7.2@d9cae720c1af31db9ba27c2bc1fcf9b0dd092fb0"
+  psalm-version="3.10.1@eeed5ecccc10131397f0eb7ee6da810c0be3a7fc"
   php-version="
-    php:7.4.0;
-    bcmath:7.4.0;
-    calendar:7.4.0;
-    Core:7.4.0;
-    ctype:7.4.0;
-    curl:7.4.0;
-    date:7.4.0;
+    php:7.4.4;
+    bcmath:7.4.4;
+    calendar:7.4.4;
+    Core:7.4.4;
+    ctype:7.4.4;
+    curl:7.4.4;
+    date:7.4.4;
     dom:20031129;
-    filter:7.4.0;
-    gd:7.4.0;
-    hash:7.4.0;
-    iconv:7.4.0;
-    intl:7.4.0;
-    json:7.4.0;
-    libxml:7.4.0;
-    mbstring:7.4.0;
-    mysqli:7.4.0;
-    mysqlnd:mysqlnd 7.4.0;
-    openssl:7.4.0;
-    pcre:7.4.0;
-    PDO:7.4.0;
-    pdo_sqlite:7.4.0;
-    Phar:7.4.0;
-    readline:7.4.0;
-    Reflection:7.4.0;
-    session:7.4.0;
-    SimpleXML:7.4.0;
-    sodium:7.4.0;
-    SPL:7.4.0;
-    standard:7.4.0;
-    tokenizer:7.4.0;
-    xml:7.4.0;
-    xmlreader:7.4.0;
-    xmlwriter:7.4.0;
-    zip:1.15.5;
-    zlib:7.4.0
+    fileinfo:7.4.4;
+    filter:7.4.4;
+    gd:7.4.4;
+    hash:7.4.4;
+    iconv:7.4.4;
+    imap:7.4.4;
+    json:7.4.4;
+    libxml:7.4.4;
+    mbstring:7.4.4;
+    mysqlnd:mysqlnd 7.4.4;
+    openssl:7.4.4;
+    pcre:7.4.4;
+    PDO:7.4.4;
+    pdo_mysql:7.4.4;
+    pdo_sqlite:7.4.4;
+    Phar:7.4.4;
+    readline:7.4.4;
+    Reflection:7.4.4;
+    session:7.4.4;
+    SimpleXML:7.4.4;
+    sodium:7.4.4;
+    SPL:7.4.4;
+    standard:7.4.4;
+    tokenizer:7.4.4;
+    xml:7.4.4;
+    xmlreader:7.4.4;
+    xmlwriter:7.4.4;
+    zip:1.15.6;
+    zlib:7.4.4
   "
 >
-  <file src="Tests/EsiTest.php">
-    <UndefinedDocblockClass occurrences="6">
-      <code>array&lt;int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:string}&gt;</code>
-      <code>RequestEvent|GetResponseEvent</code>
-      <code>RequestEvent|GetResponseEvent</code>
-      <code>array&lt;int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:class-string&lt;\Throwable&gt;, 3:string}&gt;</code>
-      <code>RequestEvent|GetResponseEvent</code>
-      <code>RequestEvent|GetResponseEvent</code>
-    </UndefinedDocblockClass>
-  </file>
   <file src="src/Request.php">
     <PropertyNotSetInConstructor occurrences="1">
       <code>Request</code>
