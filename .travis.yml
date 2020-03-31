@@ -11,5 +11,6 @@ script:
   - composer run static-analysis
   - ./vendor/bin/phpunit --coverage-clover=./phpunit.clover
   - ./vendor/bin/php-coveralls
+  - composer update --dry-run roave/security-advisories
 matrix:
   fast_finish: true
