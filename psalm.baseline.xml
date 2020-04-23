@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files
-  psalm-version="3.10.1@eeed5ecccc10131397f0eb7ee6da810c0be3a7fc"
+  psalm-version="3.11.2@d470903722cfcbc1cd04744c5491d3e6d13ec3d9"
   php-version="
     php:7.4.4;
     bcmath:7.4.4;
@@ -42,14 +42,14 @@
   "
 >
   <file src="Tests/EsiTest.php">
-    <DeprecatedClass occurrences="6">
+    <MixedInferredReturnType occurrences="2">
       <code>array&lt;int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:string}&gt;</code>
-      <code>RequestEvent|GetResponseEvent</code>
-      <code>RequestEvent|GetResponseEvent</code>
       <code>array&lt;int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:class-string&lt;\Throwable&gt;, 3:string}&gt;</code>
-      <code>RequestEvent|GetResponseEvent</code>
-      <code>RequestEvent|GetResponseEvent</code>
-    </DeprecatedClass>
+    </MixedInferredReturnType>
+    <UndefinedDocblockClass occurrences="2">
+      <code>array&lt;int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:string}&gt;</code>
+      <code>array&lt;int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:class-string&lt;\Throwable&gt;, 3:string}&gt;</code>
+    </UndefinedDocblockClass>
   </file>
   <file src="src/Request.php">
     <PropertyNotSetInConstructor occurrences="1">
