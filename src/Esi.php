@@ -17,19 +17,19 @@ class Esi extends Base
 	const DEFAULT_EXCEPTION_CODE = 0;
 
 	/**
-	* {@inheritdoc}
-	*
-	* @param string $uri
-	* @param string $alt
-	* @param bool $ignoreErrors
-	*/
+	 * {@inheritdoc}
+	 *
+	 * @param string $uri
+	 * @param string $alt
+	 * @param bool $ignoreErrors
+	 */
 	public function handle(HttpCache $cache, $uri, $alt, $ignoreErrors)
 	{
 		$request = $this->handleRequestGeneration($cache, $uri);
 
 		/**
-		* @var Response|null
-		*/
+		 * @var Response|null
+		 */
 		$response = null;
 
 		try {
@@ -55,8 +55,8 @@ class Esi extends Base
 		}
 
 		/**
-		* @var string
-		*/
+		 * @var string
+		 */
 		return $response->getContent();
 	}
 

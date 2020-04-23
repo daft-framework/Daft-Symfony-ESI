@@ -29,17 +29,17 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class EsiTest extends TestCase
 {
 	/**
-	* @psalm-return array<int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:string}>
-	*/
+	 * @psalm-return array<int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:string}>
+	 */
 	public function DataProviderTestEsi() : array
 	{
 		return [
 			[
 				'/test',
 				/**
-				* @param RequestEvent|GetResponseEvent $e
-				*/
-				function ($e) : void {
+				 * @param RequestEvent|GetResponseEvent $e
+				 */
+				static function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -60,9 +60,9 @@ class EsiTest extends TestCase
 			[
 				'/test',
 				/**
-				* @param RequestEvent|GetResponseEvent $e
-				*/
-				function ($e) : void {
+				 * @param RequestEvent|GetResponseEvent $e
+				 */
+				static function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -87,17 +87,17 @@ class EsiTest extends TestCase
 	}
 
 	/**
-	* @psalm-return array<int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:class-string<\Throwable>, 3:string}>
-	*/
+	 * @psalm-return array<int, array{0:string, 1:Closure(RequestEvent|GetResponseEvent):void, 2:class-string<\Throwable>, 3:string}>
+	 */
 	public function DataProviderTestEsiBad() : array
 	{
 		return [
 			[
 				'/test',
 				/**
-				* @param RequestEvent|GetResponseEvent $e
-				*/
-				function ($e) : void {
+				 * @param RequestEvent|GetResponseEvent $e
+				 */
+				static function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -119,9 +119,9 @@ class EsiTest extends TestCase
 			[
 				'/test',
 				/**
-				* @param RequestEvent|GetResponseEvent $e
-				*/
-				function ($e) : void {
+				 * @param RequestEvent|GetResponseEvent $e
+				 */
+				static function ($e) : void {
 					if ( ! $e->hasResponse()) {
 						switch ($e->getRequest()->getUri()) {
 							case 'http://localhost/test':
@@ -145,9 +145,9 @@ class EsiTest extends TestCase
 	}
 
 	/**
-	* @dataProvider DataProviderTestEsi
-	*/
-	public function testEsi(string $uri, Closure $eventHandler, string $expectedContent) : void
+	 * @dataProvider DataProviderTestEsi
+	 */
+	public function test_esi(string $uri, Closure $eventHandler, string $expectedContent) : void
 	{
 		$dispatcher = new EventDispatcher();
 		$dispatcher->addListener(KernelEvents::REQUEST, $eventHandler);
@@ -161,11 +161,11 @@ class EsiTest extends TestCase
 	}
 
 	/**
-	* @dataProvider DataProviderTestEsiBad
-	*
-	* @psalm-param class-string<\Throwable> $expectedException
-	*/
-	public function testEsiBad(
+	 * @dataProvider DataProviderTestEsiBad
+	 *
+	 * @psalm-param class-string<\Throwable> $expectedException
+	 */
+	public function test_esi_bad(
 		string $uri,
 		Closure $eventHandler,
 		string $expectedException,
@@ -187,7 +187,7 @@ class EsiTest extends TestCase
 		$cache->handle($request, HttpKernelInterface::MASTER_REQUEST, false);
 	}
 
-	public function testEsiNoResponse() : void
+	public function test_esi_no_response() : void
 	{
 		$dispatcher = new EventDispatcher();
 		$esi = new Esi();

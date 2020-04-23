@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3639bcad97ead06a2a0631d371113986",
+    "content-hash": "aad8f2b95a9f5fbe60e7ce3d385c25b5",
     "packages": [
         {
             "name": "psr/event-dispatcher",
@@ -4756,31 +4756,31 @@
         },
         {
             "name": "signpostmarv/php-cs-fixer-config",
-            "version": "v0.13.0",
+            "version": "v0.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SignpostMarv/PHP-CS-Fixer-Config.git",
-                "reference": "29e0a03df205056ac35a06b868a64e006d68d6ab"
+                "reference": "d588691af72fc17ed43aaf3ac0615c1aa5ab7e3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SignpostMarv/PHP-CS-Fixer-Config/zipball/29e0a03df205056ac35a06b868a64e006d68d6ab",
-                "reference": "29e0a03df205056ac35a06b868a64e006d68d6ab",
+                "url": "https://api.github.com/repos/SignpostMarv/PHP-CS-Fixer-Config/zipball/d588691af72fc17ed43aaf3ac0615c1aa5ab7e3f",
+                "reference": "d588691af72fc17ed43aaf3ac0615c1aa5ab7e3f",
                 "shasum": ""
             },
             "require": {
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "php": "^7.1,>=7.1.3"
+                "php": "^7.4"
             },
             "conflict": {
-                "vimeo/psalm": "<3.5.1"
+                "vimeo/psalm": "<3.11.2"
             },
             "require-dev": {
                 "maglnet/composer-require-checker": "^2.0",
-                "povils/phpmnd": "^2.1",
+                "povils/phpmnd": "^2.2",
                 "roave/security-advisories": "dev-master",
-                "sebastian/phpcpd": "^4.1",
-                "vimeo/psalm": "^3.5"
+                "sebastian/phpcpd": "^5.0",
+                "vimeo/psalm": "^3.11"
             },
             "type": "library",
             "autoload": {
@@ -4799,7 +4799,7 @@
                 }
             ],
             "description": "PHP-CS-Fixer Config",
-            "time": "2019-11-14T22:23:55+00:00"
+            "time": "2020-04-20T08:02:28+00:00"
         },
         {
             "name": "symfony/config",
