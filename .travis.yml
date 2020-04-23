@@ -3,8 +3,12 @@ language: php
 php:
   - 7.4
 cache:
+  files:
+    - ./.phpunit.result.cache
+    - ./.php_cs.cache
   directories:
-    - ./vendor/
+    - $HOME/.composer/cache
+    - ./psalm/cache
 install:
   - travis_retry composer install --no-interaction --no-suggest --prefer-source
 script:
